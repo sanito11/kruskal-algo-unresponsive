@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greedy Algorithm</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <h3>KRUSKAL ALGORITHM</h3>
+    </div>
+    <div class="main-content">
+        <canvas width="786" height="480"></canvas>
+        <div class="table">
+            <h4>TABLE</h4>
+            <table>
+                <tr>
+                    <th>Src</th>
+                    <th>Dest</th>
+                    <th>Weight</th>
+                </tr>
+            </table>
+            <div class="mst">
+                <button class="btn" onclick="findMST()">Find MST</button>
+                <div class="cost">MST Cost:</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="controls">
+        <div class="edge-ctrl">
+            <h4>ADD/REMOVE EDGE</h4>
+            <div class="edge-inp">
+                <label for="src">Src</label>
+                <input type="text" name="src" id="src" oninput="inputCheck(this)">
+                <label for="dest">Dest</label>
+                <input type="text" name=dest" id="dest" oninput="inputCheck(this)">
+                <label for="weight">Weight</label>
+                <input type="number" name="weight" id="weight" oninput="limitWeight(this)">
+            </div>
+            <div class="buttons">
+                <button class="btn" onclick="storeEdge()" disabled>Add Edge</button>
+                <button class="btn" onclick="removeEdge()" disabled>Remove Edge</button>
+            </div>
+
+        </div>
+        <div class="vertex-ctrl">
+            <h4>REMOVE VERTEX</h4>
+            <div class="vertex-inp">
+                <label for="vertex-ctrl">Vertex</label>
+                <input type="text" name="vertex" id="vertexInput" oninput="vertexCheck(this)">
+            </div>
+            <div class="buttons">
+                <button class="btn" id="removeVer" onclick="removeVertex()" disabled>Remove Vertex</button>
+                <button class="btn" id="clearAll" onclick="clearAll()" disabled>Clear All</button>
+            </div>
+        </div>
+    </div>
+    <div class="error-container"></div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
