@@ -541,18 +541,15 @@ function throwError(err) {
 }
 
 function highlightPath(includedEdgeIndex) {
-    var nonpathEdges = [], pathEdges = []
+    var pathEdges = []
 
     clearCanvas()
-
     updateTable()
     clearAllToggle()
 
     //identifies the path and nonpath edges
     for (let i = 0; i < edges.length; i++) {
-        if (!includedEdgeIndex.includes(i)) {
-            nonpathEdges.push(edges[i])
-        } else {
+        if (includedEdgeIndex.includes(i)) {
             pathEdges.push(edges[i])
         }
     }
@@ -560,9 +557,8 @@ function highlightPath(includedEdgeIndex) {
 
     //plot the path edges
     pathEdges.forEach(edge => newEdge(edge.x1, edge.y1, edge.x2, edge.y2, edge.weight, true))
-    setTimeout(() => {
-        vertices.forEach(ver => newVertex(ver.x, ver.y, R, ver.label))
-    }, 10)
+    vertices.forEach(ver => newVertex(ver.x, ver.y, R, ver.label))
+
 }
 
 function removeCost() {
